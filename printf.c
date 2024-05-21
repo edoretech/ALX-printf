@@ -18,7 +18,7 @@ int _printf(char *str, ...)
     va_start(list, str);
 
     if (str == NULL)
-        return (0);
+        return (-1);
 
     while(i < strlen(str) && str[i] != '\0')
     {
@@ -39,7 +39,7 @@ int _printf(char *str, ...)
                         total_strlen += print_int(int_value);
                         if (sizeof(int_value) != sizeof(int))
                             {
-                                return (0);
+                                return (-1);
                             }
                         i++;
                         break;
