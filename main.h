@@ -1,7 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
-#define UNNSED(x) (void)x
-#define BUFFER_SIZE 1024
+#ifndef MAIN_HM
+#define MAIN_HM
 
 #include "printf.h"
 
