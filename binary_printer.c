@@ -9,6 +9,16 @@ char *print_bin(int num){
     char *binary_str = malloc(sizeof(char) * 33);
     int x;
 
+    if (binary_str == NULL)
+    {
+        return (NULL);
+    }
+
+    if (num == 0){
+        strcat(binary_str, "0");
+        return (binary_str);
+    }
+
     for(x = 31; x>= 0; x--)
     {
         if (((num >> x) & 1))
