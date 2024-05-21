@@ -12,6 +12,7 @@ int _printf(char *str, ...)
     int int_value;
     char* str_value;
     unsigned int unsigned_value;
+    char *binary_str = NULL;
     int total_strlen = 0;
     long unsigned int i = 0;
     va_list list;
@@ -53,6 +54,14 @@ int _printf(char *str, ...)
                     case 'c':
                         int_value = va_arg(list, int);
                         total_strlen += write(1, &int_value, 1);
+                        i++;
+                        break;
+
+                    case 'b':
+                        int_value = va_arg(list, int);
+                        binary_str = print_bin(int_value);
+                        total_strlen += _printf(binary_str);
+                        free(binary_str);
                         i++;
                         break;
 
