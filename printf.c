@@ -17,7 +17,10 @@ int _printf(char *str, ...)
     va_list list;
     va_start(list, str);
 
-    while(i < strlen(str))
+    if (str == NULL)
+        return (0);
+    
+    while(i < strlen(str) && str[i] != '\0')
     {
         if (str[i] == '%')
         {
