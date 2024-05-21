@@ -61,7 +61,7 @@ int _printf(char *str, ...)
                         i++;
                         break;
                 }
-                
+                continue;
             }
         }
         total_strlen += write(1, &str[i], 1);
