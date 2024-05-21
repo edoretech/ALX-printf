@@ -19,7 +19,7 @@ int _printf(char *str, ...)
 
     if (str == NULL)
         return (0);
-    
+
     while(i < strlen(str) && str[i] != '\0')
     {
         if (str[i] == '%')
@@ -37,6 +37,10 @@ int _printf(char *str, ...)
                     case 'd':
                         int_value = va_arg(list, int);
                         total_strlen += print_int(int_value);
+                        if (sizeof(int_value) != sizeof(int))
+                            {
+                                return (0);
+                            }
                         i++;
                         break;
                     
