@@ -10,7 +10,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdlib.h>
-
+#include <limits.h>
 
 /*Defined functions*/
 int _printf(char *str, ...);
