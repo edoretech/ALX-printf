@@ -73,6 +73,16 @@ int _printf(char *str, ...)
                         i++;
                         break;
 
+                    case 'X':
+                        int_value = va_arg(list, int);
+                        hex_str = decimal_to(int_value, 16);
+                        hex_str_cap = cap_hex_str(hex_str);
+                        total_strlen += _printf("%s", hex_str_cap);
+                        free(hex_str);
+                        free(hex_str_cap);
+                        i++;
+                        break;
+
                     case 'b':
                         int_value = va_arg(list, int);
                         binary_str = print_bin(int_value);
