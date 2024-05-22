@@ -12,7 +12,7 @@ int _printf(char *str, ...)
     int int_value;
     char* str_value;
     unsigned int unsigned_value;
-    char *binary_str = NULL;
+    char *binary_str = NULL, *hex_str = NULL, *hex_str_cap = NULL;
     int total_strlen = 0;
     long unsigned int i = 0;
     va_list list;
@@ -67,9 +67,9 @@ int _printf(char *str, ...)
 
                     case 'x':
                         int_value = va_arg(list, int);
-                        binary_str = decimal_to(int_value, 16);
-                        total_strlen += _printf("%s", binary_str);
-                        free(binary_str);
+                        hex_str = decimal_to(int_value, 16);
+                        total_strlen += _printf("%s", hex_str);
+                        free(hex_str);
                         i++;
                         break;
 
