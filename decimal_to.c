@@ -50,3 +50,31 @@ char *decimal_to(int num, int base) {
     free(output_str);
     return output_str_inv;
 }
+
+/**
+ * cap_hex_str - capitalize hexadecimal string
+ * @hex_str: The hex string to capitalize
+ * Return: cap_hex_str
+ */
+char *cap_hex_str(char *hex_str)
+{
+    size_t i;
+    char *cap_hex_str = malloc(sizeof(char) * 33);
+    
+    if (cap_hex_str == NULL)
+    {
+        return (NULL);
+    }
+    
+    for (i = 0; i < strlen(hex_str); i++)
+        {
+            if (hex_str[i] >= 'a' && hex_str[i] <= 'f')
+            {
+                cap_hex_str[i] = hex_str[i] - 32;
+            }
+            else{
+                cap_hex_str[i] = hex_str[i];
+            }
+        }
+    return (cap_hex_str);
+}
