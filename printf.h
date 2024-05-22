@@ -18,6 +18,7 @@ int _printf(char *str, ...);
 int print_int(int num);
 int print_unsigned(unsigned int num);
 char *print_bin(int num);
+char *decimal_to(int num, int base);
 
 
 
