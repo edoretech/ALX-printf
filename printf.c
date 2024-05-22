@@ -57,6 +57,22 @@ int _printf(char *str, ...)
                         i++;
                         break;
 
+                    case 'o':
+                        int_value = va_arg(list, int);
+                        binary_str = decimal_to(int_value, 8);
+                        total_strlen += _printf("%s", binary_str);
+                        free(binary_str);
+                        i++;
+                        break;
+
+                    case 'x':
+                        int_value = va_arg(list, int);
+                        binary_str = decimal_to(int_value, 16);
+                        total_strlen += _printf("%s", binary_str);
+                        free(binary_str);
+                        i++;
+                        break;
+
                     case 'b':
                         int_value = va_arg(list, int);
                         binary_str = print_bin(int_value);
