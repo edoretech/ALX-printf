@@ -19,19 +19,11 @@ char *decimal_to(int num, int base) {
         return NULL; 
     }
 
-    if (output_str == NULL) {
+    if (output_str == NULL || output_str_inv == NULL) {
         free(output_str);
         free(output_str_inv);
         return NULL;
     }
-
-    
-    if (output_str_inv == NULL) {
-        free(output_str);
-        free(output_str_inv);
-        return NULL; 
-    }
-
     
 
     if (num == 0) {
